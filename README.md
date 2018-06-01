@@ -7,6 +7,14 @@ This is a simplified example of an image manipulation service using Express and 
 - Image Manipulation via [sharp](https://github.com/lovell/sharp)
 - HTTP Server via [express](https://expressjs.com/)
 
+Tutorial
+-------------
+
+You can find the tutorial here.
+
+https://aggrandize.io/blog/how-to-build-an-image-scaling-service-with-nodejs
+
+
 Getting Started
 ---------------
 
