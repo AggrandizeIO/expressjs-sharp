@@ -55,7 +55,7 @@ This example only scratches the surface of what is possible. Here is a list of a
 | Parameter | Description  | Values         |
 | --------- | ------------ | -------------- |
 | blur      | Blur         | 0.3 - 1000     |
-| crop      | Crop         | sharp.strategy |
+| crop      | Crop         | A string of `north`, `northeast`, `east`, `southeast`, `south`, `southwest`, `west, `northwest`, `center`, `centre`, `entropy`, or `attention` [Sharp Cropping] |
 | h         | Height       | 0 - Infinity   |
 | w         | Width        | 0 - Infinity   |
 | q         | JPEG Quality | 0 - 100        |
@@ -96,3 +96,5 @@ License
 -------
 
 MIT
+
+[Sharp Cropping]: http://sharp.pixelplumbing.com/en/stable/api-resize/#crop
