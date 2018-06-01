@@ -73,14 +73,14 @@ Extract from that the image path `photo-1506153456649-ed4ed08d1e0c`, add it onto
 http://localhost:8080/unsplash/photo-1506153456649-ed4ed08d1e0c?w=500
 ```
 
-If you have your own image storage location like an S3 Bucket or Google Cloud Storage bucket, you can use make a new customer entry with `baseUrl` configured up to point where the path is different.
+If you have your own image storage location like an S3 Bucket or Google Cloud Storage bucket, you can add a new customer entry with a `baseUrl`.
 
 ```
 customers: {
   unsplash: {
     baseUrl: 'https://images.unsplash.com'
   },
-  amazon: {
+  aws-bucket: {
     baseUrl: 'https://s3-eu-west-1.amazonaws.com/bucket'
   }
 }
@@ -89,7 +89,7 @@ customers: {
 Restart the server when you change this file. Your bucket images can now be addressed by the customer name.
 
 ```
-https://localhost:8080/amazon/my-image.jpg?w=320
+https://localhost:8080/aws-bucket/my-image.jpg?w=320
 ```
 
 License
