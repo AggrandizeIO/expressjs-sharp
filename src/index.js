@@ -1,6 +1,5 @@
 import http from 'http';
 import express from 'express';
-import cors from 'cors';
 import morgan from 'morgan';
 import axios from 'axios';
 import sharp from 'sharp';
@@ -11,7 +10,7 @@ app.server = http.createServer(app);
 
 app.use(morgan('dev'));
 
-const getCustomerById = (customerId, db) => db[customerId] ? db[customerId] : 'https://localhost';
+const getCustomerById = (id, db) => db[id] ? db[id] : 'https://localhost';
 
 const download = url => axios({
   method: 'get',
@@ -60,9 +59,8 @@ const transform = ({
   return sharpObj;
 }
 
-app.options(':customerId/:imagePath*', cors());
-app.get('/:customerId/:imagePath*', (req, res) => {
-	const cust = getCustomerById(req.params.customerId, config.customers);
+app.get('/:customerId/*', (req, res) => {
+	const customer = getCustomerById(req.params.customerId, config.customers);
 	const {
     blur,
     crop,
@@ -70,14 +68,18 @@ app.get('/:customerId/:imagePath*', (req, res) => {
 		w,
     q,
 	} = req.query;
+
+	// Extract image path from URL
 	const imagePath = req.url.split('/').slice(2).join('/');
 
   // Ignore requests for favicons.
   if (imagePath === '/favicon.ico') { return res.status(404); }
 
   // Output format...
-	res.type('image/jpeg');
-	const url = `${cust.baseUrl}/${imagePath}`;
+	res.type('jpg');
+
+	// Resource path
+	const url = `${customer.baseUrl}/${imagePath}`;
 
   // Download the image from the user's master image source.
   download(url).then(response => response.pipe(transform({
