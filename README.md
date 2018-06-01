@@ -52,13 +52,13 @@ Query Parameters
 
 This example only scratches the surface of what is possible. Here is a list of available commands.
 
-| Parameter | Description  | Values       |
-| --------- | ------------ | ------------ |
-| blur      | Blur         | 0.3 - 1000   |
-| crop      | Crop         | 0 - Infinity |
-| h         | Height       | 0 - Infinity |
-| w         | Width        | 0 - Infinity |
-| q         | JPEG Quality | 0 - 100      |
+| Parameter | Description  | Values         |
+| --------- | ------------ | -------------- |
+| blur      | Blur         | 0.3 - 1000     |
+| crop      | Crop         | sharp.strategy |
+| h         | Height       | 0 - Infinity   |
+| w         | Width        | 0 - Infinity   |
+| q         | JPEG Quality | 0 - 100        |
 
 Usage Example
 -------
