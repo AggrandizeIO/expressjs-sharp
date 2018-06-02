@@ -12,7 +12,7 @@ Tutorial
 
 You can find the tutorial here.
 
-https://aggrandize.io/blog/how-to-build-an-image-scaling-service-with-nodejs
+https://aggrandize.io/blog/how-to-build-an-image-processing-service-with-expressjs-and-sharp
 
 
 Getting Started
