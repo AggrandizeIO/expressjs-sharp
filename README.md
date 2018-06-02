@@ -81,7 +81,7 @@ Extract from that the image path `photo-1506153456649-ed4ed08d1e0c`, add it onto
 http://localhost:8080/unsplash/photo-1506153456649-ed4ed08d1e0c?w=500
 ```
 
-If you have your own image storage location like an S3 Bucket or Google Cloud Storage bucket, you can add a new customer entry with a `baseUrl`.
+If you have your own image storage location like an S3 Bucket or Google Cloud Storage bucket, you can add a new customer entry with a `baseUrl` to `config.js`.
 
 ```
 customers: {
